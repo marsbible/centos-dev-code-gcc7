@@ -23,7 +23,6 @@ RUN cd /home/dev && curl -fsSL https://download-ib01.fedoraproject.org/pub/epel/
 
 
 RUN cd /home/dev/glibc-2.20 && mkdir build && cd build && ../configure --prefix=/opt/glibc-2.20 && make && make install \
-    && sh /home/dev/cmake_install.sh --skip-license  --prefix=/usr/local \
     && unzip /home/dev/clangd-linux-12.0.0.zip -d /usr/local \
     && ln -s /usr/local/clangd_12.0.0/bin/clangd  /usr/bin/clangd \
     && patchelf --set-interpreter /opt/glibc-2.20/lib/ld-linux-x86-64.so.2 --set-rpath /opt/glibc-2.20/lib:/usr/lib64 /usr/local/clangd_12.0.0/bin/clangd \
