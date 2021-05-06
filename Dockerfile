@@ -3,6 +3,7 @@ FROM centos:7.6.1810
 RUN yum -y group install "Development Tools" \
     && yum install -y centos-release-scl \
     && yum install -y epel-release \
+    && yum install -y https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.7-1.x86_64.rpm \
     && yum update -y \
     && yum install -y cmake3 devtoolset-7 devtoolset-7-libasan-devel devtoolset-7-libubsan-devel \
     && yum install -y libaio sudo openssl-devel net-tools wget file unzip vim curl git python-pip \
