@@ -7,6 +7,7 @@ RUN yum -y group install "Development Tools" \
     && yum update -y \
     && yum install -y cmake3 devtoolset-7 devtoolset-7-libasan-devel devtoolset-7-libubsan-devel \
     && yum install -y libaio sudo openssl-devel net-tools wget file unzip vim curl git python-pip \
+    && ln -s /usr/bin/cmake3 /usr/bin/cmake \
     && yum -y clean all
 
 RUN localedef -c -f UTF-8 -i en_US en_US.UTF-8 \
